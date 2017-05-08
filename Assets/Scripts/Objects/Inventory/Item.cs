@@ -19,25 +19,24 @@ public abstract class Item : ScriptableObject
     }
 }
 
-public abstract class Equipment : Item, IEquippable
+public abstract class Supplies : Item
 {
-    public virtual void Equip()
-    {
-    }
-
-    public virtual void UnEquip()
-    {
-    }
+    
 }
 
-public abstract class Weapon : Equipment
+public abstract class Weapon : Supplies
 {
     public int Damage;
 }
 
-public abstract class Armor : Equipment
+public abstract class Armor : Supplies
 {
     public int ArmorRating;
+}
+
+public abstract class Medic: Supplies
+{
+    public int Healing;
 }
 
 #region Interfaces
@@ -45,12 +44,6 @@ public abstract class Armor : Equipment
 public interface IShootable
 {
     void Shoot(GameObject Target);
-}
-
-public interface IEquippable
-{
-    void Equip();
-    void UnEquip();
 }
 
 public interface ISwingable

@@ -1,15 +1,7 @@
-﻿using UnityEngine;
-
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 [CreateAssetMenu(menuName = "Item/CombatKnife")]
-public class CombatKnife : Weapon
-{
-    private BackPack backpack;
+public class CombatKnife : Item {
 
-    public override void Initialize(GameObject obj)
-    {
-        if (Name == "")
-            Name = "CombatKnife";
-        backpack = obj.GetComponent<BackPack>();
-        backpack.Add(Instantiate(this));
-    }
 }
