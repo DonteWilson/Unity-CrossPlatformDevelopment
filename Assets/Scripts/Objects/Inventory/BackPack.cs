@@ -1,12 +1,13 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class BackPack : MonoBehaviour
+public class BackPack : MonoBehaviour 
 {
     public int Capacity = 25;
 
     [SerializeField] private List<Item> inspectorItems;
-
+    public List<Item> ReferenceItems = new List<Item>();
+    [HideInInspector]public List<Item> InventoryItems = new List<Item>();
     public List<Item> Items = new List<Item>();
 
     private void Start()

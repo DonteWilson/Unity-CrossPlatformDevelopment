@@ -36,21 +36,14 @@ public class UIGridBehaviour : MonoBehaviour
 
         itemgo.transform.SetParent(FirstAvailable.transform);
         var source = itemgo.GetComponent<RectTransform>();
-        source.Stretch();
+       // source.Stretch();
         numItems++;
 
     }
 
+
 }
-public static void Stretch(this RectTransform source)
-{
-    source.anchorMin = new Vector2(0, 0);
-    source.anchorMax = new Vector2(1, 1);
-    source.pivot = new Vector2(.5f, .5f);
-    source.offsetMax = Vector2.zero;
-    source.offsetMin = Vector2.zero;
-    source.localScale = new Vector3(1, 1, 1);
-}
+
 
 
 #if UNITY_EDITOR

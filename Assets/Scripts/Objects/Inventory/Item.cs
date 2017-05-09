@@ -1,14 +1,13 @@
 ﻿using UnityEngine;
 
-public abstract class Item : ScriptableObject
+public abstract class Item : ScriptableObject, IExecutable
 {
     public int ID;
     public string Name = "Item";
     public Sprite sprite;
 
-    public virtual void Initialize(GameObject obj)
-    {
-    }
+    public abstract void Initialize(GameObject obj);
+
 
     public virtual void AddTo(BackPack backpack)
     {
@@ -17,6 +16,8 @@ public abstract class Item : ScriptableObject
     public virtual void RemoveFrom(BackPack backpack)
     {
     }
+
+    public abstract void Execute();
 }
 
 public abstract class Supplies : Item
